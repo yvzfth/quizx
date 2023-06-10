@@ -1,0 +1,66 @@
+<app-nav-menu></app-nav-menu>
+<div class="d-flex flex-row align-items-center">
+  <h2>{{ collection.name }}</h2>
+  <a class="btn btn-dark ms-5" (click)="toggleCardDisplay()">Change Display</a>
+</div>
+
+<div class="flashcard-container" *ngIf="showAllCards">
+  <div class="flashcard" *ngFor="let flashcard of collection.flashcards">
+    <div
+      class="card"
+      [ngClass]="{ flipped: flashcard.showBack }"
+      (click)="flipCard(flashcard)"
+    >
+      <div class="front">
+        {{ flashcard.front }}
+      </div>
+      <div class="back">
+        {{ flashcard.back }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center" *ngIf="!showAllCards">
+  Card {{ currentCardIndex + 1 }} -
+  {{ collection.flashcards[currentCardIndex].showBack ? "Back" : "Front" }}
+</div>
+<div class="flashcard-container" *ngIf="!showAllCards">
+  <div
+    class="flashcard-big"
+    *ngFor="let flashcard of [collection.flashcards[currentCardIndex]]"
+  >
+    <div
+      class="card"
+      [ngClass]="{ flipped: flashcard.showBack }"
+      (click)="flipCard(flashcard)"
+    >
+      <div class="front">
+        {{ flashcard.front }}
+      </div>
+      <div class="back">
+        {{ flashcard.back }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="d-flex flex-row justify-content-center align-items-center"
+  *ngIf="!showAllCards"
+>
+  <button
+    class="btn btn-light me-4"
+    (click)="prevCard()"
+    [disabled]="currentCardIndex === 0"
+  >
+    <span class="fa fa-arrow-left"></span>
+  </button>
+  <button
+    class="btn btn-light ms-4"
+    (click)="nextCard()"
+    [disabled]="currentCardIndex === collection.flashcards.length - 1"
+  >
+    <span class="fa fa-arrow-right"></span>
+  </button>
+</div>

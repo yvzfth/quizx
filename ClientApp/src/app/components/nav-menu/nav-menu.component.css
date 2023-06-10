@@ -1,0 +1,35 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.user-icon {
+  font-size: 24px;
+}
+.px-6 {
+  padding-right: 0.6rem !important;
+  padding-left: 0.6rem !important;
+}
+
+.button:hover,
+.button:focus,
+.button.active {
+  background: linear-gradient(180deg, #ec37d0, #00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

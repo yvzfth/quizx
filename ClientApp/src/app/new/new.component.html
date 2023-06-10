@@ -1,0 +1,134 @@
+<app-nav-menu></app-nav-menu>
+<form (submit)="onSubmit()" ngNativeValidate>
+  <div class="">
+    <div class="form-group">
+      <label for="collectionName">Collection Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="collectionName"
+        [(ngModel)]="collectionName"
+        required
+        name="first"
+        placeholder="My Collection"
+      />
+    </div>
+
+    <!-- Display flashcards -->
+    <hr />
+    <table *ngIf="flashcards.length > 0">
+      <thead>
+        <tr>
+          <th>Front</th>
+          <th>Back</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flashcard of flashcards">
+          <ng-container *ngIf="flashcard.index !== editingFlashcard?.index">
+            <td>{{ flashcard.front }}</td>
+            <td>{{ flashcard.back }}</td>
+            <td>
+              <button
+                (click)="editFlashcard(flashcard.index)"
+                class="btn btn-info btn-sm"
+              >
+                Edit
+              </button>
+            </td>
+            <td>
+              <button
+                (click)="deleteFlashcard(flashcard.index)"
+                class="btn btn-danger btn-sm"
+              >
+                Delete
+              </button>
+            </td>
+          </ng-container>
+          <ng-container *ngIf="flashcard.index === editingFlashcard?.index">
+            <td>
+              <input
+                type="text"
+                name="front"
+                [(ngModel)]="flashcard.front"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="back"
+                [(ngModel)]="flashcard.back"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <button
+                class="btn btn-warning btn-sm"
+                (click)="
+                  updateFlashcard(
+                    flashcard.index,
+                    flashcard.front,
+                    flashcard.back
+                  )
+                "
+              >
+                Update
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-secondary btn-sm" (click)="cancelEdit()">
+                Cancel
+              </button>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Add flashcard form -->
+    <form
+      (submit)="
+        addFlashcard(frontInput.value, backInput.value);
+        frontInput.value = '';
+        backInput.value = ''
+      "
+      ngNativeValidate
+    >
+      <div class="input-group-sm">
+        <input
+          class="form-control m-1"
+          type="text"
+          #frontInput
+          placeholder="Enter the front side of the flashcard"
+          required
+        />
+      </div>
+      <div class="input-group-sm">
+        <input
+          class="form-control input-group-sm m-1"
+          type="text"
+          #backInput
+          placeholder="Enter the back side of the flashcard"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success m-1">Add Flashcard</button>
+    </form>
+
+    <!-- Add other form inputs as needed -->
+  </div>
+  <div class="d-flex flex-row justify-content-end">
+    <a
+      type="button"
+      class="btn btn-secondary me-2"
+      data-dismiss="modal"
+      href="/dashboard"
+    >
+      Cancel
+    </a>
+    <button type="submit" class="btn btn-primary">Create Collection</button>
+  </div>
+</form>

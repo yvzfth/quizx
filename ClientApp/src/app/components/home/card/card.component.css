@@ -1,0 +1,87 @@
+/* X-Small devices (portrait phones, less than 576px)*/
+/* No media query for `xs` since this is the default in Bootstrap*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+ 
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (max-width: 768px) {
+  .card {
+    display: grid;
+    
+    background-color: red;
+    grid-template-columns: 1fr;
+   
+  }
+ 
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .card {
+    display: grid;
+ 
+    grid-template-columns: repeat(2, 1fr);
+  
+  }
+ 
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+  
+}
+
+.card img {
+    max-width: 100%;
+ 
+}
+
+.reversed div:last-child {
+  order: -1
+}
+
+.card {
+    background-color: transparent;
+}
+
+.quizx-plus-badge {
+    background-color: rgb(254,196,26);
+    padding: 4px;
+    color: white;
+    border-radius: 4px;
+    width: fit-content;
+    font-size: small;
+}
+
+.quizx-teachers-badge {
+    font-size: 1.8rem !important;
+    
+}
+
+
+.download {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  width: 10rem;
+  height: 2.5rem;
+}
+
+.download img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}

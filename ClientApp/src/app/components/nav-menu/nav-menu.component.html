@@ -1,0 +1,120 @@
+<header>
+  <!--
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" [routerLink]="['/']">QuizX</a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                    aria-label="Toggle navigation"
+                    [attr.aria-expanded]="isExpanded"
+                    (click)="toggle()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+                 [ngClass]="{ show: isExpanded }">
+                <ul class="navbar-nav flex-grow">
+                    <li class="nav-item"
+                        [routerLinkActive]="['link-active']"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    -->
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom mb-3">
+    <div class="container grid justify-content-space-between">
+      <div>
+        <a class="navbar-brand" href="#">QuizX</a>
+      </div>
+
+      <form class="d-flex" (ngSubmit)="search()">
+        <input
+          class="form-control me-2"
+          type="search"
+          name="query"
+          placeholder="Search quizzes"
+          aria-label="Search"
+          [(ngModel)]="query"
+        />
+        <button class="btn btn-outline-light text-black" type="submit">
+          Search
+        </button>
+      </form>
+      <div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul
+            class="navbar-nav ms-auto justify-content-around align-items-center"
+          >
+            <li class="nav-item">
+              <a
+                type="button"
+                class="btn btn-primary btn-outline-light rounded-pill py-1 px-6 me-5"
+                data-toggle="modal"
+                data-target="#Modal"
+                href="/new"
+              >
+                <div class="fa fa-plus p-0 m-0"></div>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                *ngIf="!isAuthenticated"
+                class="btn me-4 text-dark"
+                href="/login"
+              >
+                Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                *ngIf="!isAuthenticated"
+                class="btn btn-warning text-light"
+                href="/signup"
+                >Sign Up</a
+              >
+            </li>
+            <li *ngIf="isAuthenticated">
+              <div class="user-icon">
+                <i class="fa fa-user button"></i>
+              </div>
+
+              <div id="popover-content" style="display: none">
+                <div class="popover-content-inner">
+                  <p>{{ fullName }}</p>
+                  <div class="d-flex flex-column">
+                    <a href="/my-cards" class="btn btn-light btn-sm mb-2"
+                      >My Cards</a
+                    >
+                    <a id="logout" class="btn btn-danger btn-sm"> Logout </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,58 @@
+# Ignore node_modules folder in Angular app
+ClientApp/node_modules/
+ClientApp/.angular
+# Ignore package folders in .NET Web API
+QuizXAPI/.nuget/
+QuizXAPI/packages/
+QuizXAPI/obj/
+QuizXAPI/bin/
+QuizXAPI/Debug/
+QuizXAPI/Release/
+
+# Ignore Visual Studio files
+QuizXAPI/*.sln
+QuizXAPI/*.csproj
+QuizXAPI/*.user
+
+# Ignore build artifacts
+QuizXAPI/obj/
+QuizXAPI/bin/
+
+# Ignore environment-specific files
+QuizXAPI/appsettings.Development.json
+QuizXAPI/appsettings.Production.json
+QuizXAPI/appsettings.Staging.json
+
+# Ignore generated files
+QuizXAPI/appsettings*.json
+QuizXAPI/appsettings*.json*
+QuizXAPI/*.dbmdl
+
+# Ignore logs
+QuizXAPI/Logs/
+
+# Ignore NuGet package restore files
+QuizXAPI/packages.lock.json
+QuizXAPI/nuget.config
+QuizXAPI/.nuget/
+QuizXAPI/.*proj.nuget.cache
+
+# Ignore temporary files
+QuizXAPI/[Tt]emp/
+QuizXAPI/[Oo]bj/
+
+# Ignore user-specific files
+QuizXAPI/*.user
+
+# Ignore Visual Studio files
+QuizXAPI/*.sln
+QuizXAPI/*.csproj
+QuizXAPI/obj/
+
+# Ignore .NET Core files
+QuizXAPI/*.csproj.user
+QuizXAPI/Properties/launchSettings.json
+
+# Ignore build artifacts
+QuizXAPI/bin/
+QuizXAPI/obj/

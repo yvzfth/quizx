@@ -1,0 +1,46 @@
+.footer {
+    padding: 2rem
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+  .footer-nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+    .footer-nav ul li {
+      margin-bottom: 10px;
+    }
+
+      .footer-nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .footer-nav ul li strong {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+.footer-legal {
+  margin-top: 20px;
+  text-align: center;
+}
+
+  .footer-legal p {
+    margin: 0;
+  }
+
+
+
+@media (max-width: 767px) {
+
+  .footer-nav ul li {
+    flex: 0 0 100%;
+  }
+}

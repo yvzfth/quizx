@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuizX Home Page</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <app-nav-menu></app-nav-menu>
+    <!-- Hero -->
+    <div class="hero-container">
+      <img
+        class="hero-image"
+        src="https://images.prismic.io/quizlet-prod/6aa15201-1bbd-4bab-803d-93e7d2d4110e_Alt+Image+1+%281%29.png?auto=compress,format&rect=0,0,2880,1317&w=2880&h=1317"
+      />
+      <div class="hero-text">
+        <h2>The best digital cards and study tools</h2>
+        <p>
+          You can join 60 million students using Quizlet's science-backed
+          learning cards, worksheets, and expert solutions to improve grades and
+          achieve goals.
+        </p>
+        <a *ngIf="!isAuthenticated" class="btn btn-primary" href="/signup"
+          >Sign up for free</a
+        >
+      </div>
+    </div>
+
+    <!-- Home Feed-->
+    <div>
+      <h2 class="text-center mb-4">
+        90% of students using QuizX get higher grades
+      </h2>
+
+      <app-card
+        [renderStyle]="'reversed'"
+        [title]="'You can memorize faster for free'"
+        [description]="
+          'Research shows that using cards to test yourself is more effective than rereading your notes. Students can study more than 100 subjects on QuizX, including mathematics, medicine and modern languages.'
+        "
+        [image]="
+          'https://images.prismic.io/quizlet-prod/130dc509-6919-47bc-b27d-17f600a41b0c_IntlFirstSlice.png?auto=compress,format'
+        "
+        [buttonText]="'Start QuizX'"
+      >
+      </app-card>
+      <app-card
+        [renderStyle]="'normal'"
+        [title]="'Thanks to QuizX, you can now study comfortably on the go.'"
+        [description]="
+          'With our iOS and Android apps, you can work wherever you want, even offline. Your progress syncs with your phone and computer.'
+        "
+        [image]="
+          'https://images.prismic.io/quizlet-prod/1d359d1f-be06-481d-af18-30a4d93b3b0f_commute-image.png?auto=compress,format&rect=0,0,1001,1000&w=400&h=400'
+        "
+      >
+      </app-card>
+      <app-card
+        [renderStyle]="'reversed'"
+        [title]="'Get fully prepared for test day with Learn & Test mode'"
+        [description]="
+          'You can turn your cards into customizable practice tests. You can go beyond memorization with question types that make you remember.'
+        "
+        [image]="
+          'https://images.prismic.io/quizlet-prod/d1d625f2-24d7-4434-bc06-b2562e4d659c_LearnandTestINTL-web.gif?auto=compress'
+        "
+        [buttonText]="'Try the Learn & Test mode for free'"
+        [isQuizXPlus]="'true'"
+      >
+        <app-card-item
+          [image]="
+            'https://prismic-io.s3.amazonaws.com/quizlet-prod/8ec0178c-1b86-4698-b547-bcbe3e5172d4_learn.svg'
+          "
+          [title]="'You can work in learn mode'"
+          [description]="
+            'You can work with multiple choice, true/false, written questions and more without any time limit.'
+          "
+        ></app-card-item>
+        <app-card-item
+          [image]="
+            'https://prismic-io.s3.amazonaws.com/quizlet-prod/69eba793-2788-47dd-a8a7-e89d723edbe7_Test.svg'
+          "
+          [title]="'You can test'"
+          [description]="
+            'You can study more efficiently with practice tests so that you are fully prepared for your exams.'
+          "
+        ></app-card-item>
+        <app-card-item
+          [image]="
+            'https://prismic-io.s3.amazonaws.com/quizlet-prod/5364d9dd-a28d-41ca-a5d1-308c49aa0f49_Smart+Grading.svg'
+          "
+          [title]="'You can access smart answers'"
+          [description]="
+            'Thanks to smart answers in QuizX, your answers are not considered wrong due to minor mistakes'
+          "
+        ></app-card-item>
+      </app-card>
+
+      <app-card
+        [renderStyle]="'normal'"
+        [title]="'Do your homework using expert-approved solutions'"
+        [description]="
+          'QuizX\'s expert-approved solutions show you step-by-step steps to help you solve difficult problems. Millions of solutions on 64 topics.'
+        "
+        [image]="
+          'https://images.prismic.io/quizlet-prod/f26af523-4f77-4676-9646-e437ab1e7062_homepageexpert2.gif?auto=compress,format&rect=0,0,1080,1456&w=1080&h=1456'
+        "
+        [buttonText]="'Discover free solutions'"
+        [isQuizXPlus]="'true'"
+      >
+        <app-card-item
+          [image]="
+            'https://prismic-io.s3.amazonaws.com/quizlet-prod/d6cecb4b-2807-42e7-9d31-1d7f22c02987_Textbook+Solutions.svg'
+          "
+          [title]="'Thousands of textbooks'"
+          [description]="
+            'You can find solutions to textbook questions in math, science, business, and many other fields.'
+          "
+        ></app-card-item>
+        <app-card-item
+          [image]="
+            'https://prismic-io.s3.amazonaws.com/quizlet-prod/0e684f93-8be7-46bc-b970-0ce888ba9bf7_Solutions.svg'
+          "
+          [title]="'Expert-approved'"
+          [description]="
+            'Each textbook solution is carefully prepared and checked by our team of experts.'
+          "
+        ></app-card-item>
+        <app-card-item
+          [image]="
+            'https://prismic-io.s3.amazonaws.com/quizlet-prod/86d561c3-c0c5-47b6-a75e-a3d85fc64709_Step+by+Step.svg'
+          "
+          [title]="'Step by step learning'"
+          [description]="
+            'It\'s not enough just to memorize it, understand it thoroughly! You can go step-by-step and browse through the free solutions from each textbook to make sure you understand.'
+          "
+        ></app-card-item>
+      </app-card>
+
+      <!-- User Comments -->
+      <div class="m-5">
+        <h2 class="text-center mb-4">
+          What students had to say about QuizX...
+        </h2>
+
+        <div class="d-flex flex-row justify-content-around card-container">
+          <app-user-comment
+            [image]="
+              'https://images.prismic.io/quizlet-prod/8568c5a7-2554-43c5-81bf-322169240769_Image+%2812%29.png?auto=compress,format&rect=0,3,310,228&w=286&h=210'
+            "
+            [comment]="
+              'QuizX has helped me be much more successful since high school. I will continue to work while I am at university and while I am on the go.'
+            "
+            [username]="'Hamza'"
+            [userInfo]="', Medical senior student'"
+          >
+          </app-user-comment>
+          <app-user-comment
+            [image]="
+              'https://images.prismic.io/quizlet-prod/17a32b86-e009-47f6-acb0-cdc8e89d35c4_06Sydney+1.png?auto=compress,format&rect=0,10,930,683&w=286&h=210'
+            "
+            [comment]="
+              'Learn mode is QuizX\'s most important feature to date. It shows the terms in a way you can remember very easily.'
+            "
+            [username]="'Sydney'"
+            [userInfo]="', Biology second year student'"
+          >
+          </app-user-comment>
+          <app-user-comment
+            [image]="
+              'https://images.prismic.io/quizlet-prod/8160414d-ed6b-41ce-9654-18fc839916f6_oscar+and+owen+photo+for+us+homepage_fullsize+%281%29+1.png?auto=compress,format&rect=0,8,793,582&w=286&h=210'
+            "
+            [comment]="
+              'All of our friends use Quizlet. As it is a fun way to study, we feel more confident while preparing for midterms and finals.'
+            "
+            [username]="'Owen ve Oscar'"
+            [userInfo]="', High school sophomores'"
+          >
+          </app-user-comment>
+        </div>
+      </div>
+
+      <!-- Teachers -->
+
+      <div class="teacher-section">
+        <app-card
+          [renderStyle]="'reversed'"
+          [title]="'Support your students'"
+          [description]="
+            'No matter what they want to achieve, you can ensure that every student learns the subject they are interested in with confidence. You can quickly motivate your students using QuizX\'s free study sets, study modes, and the classroom Assessment tool. Students and teachers can sign up and work for free.'
+          "
+          [image]="
+            'https://images.prismic.io/quizlet-prod/d5b00568-a324-488f-b16b-44480144cb81_Image+for+Text+Callout+%283%29.png?auto=compress,format&rect=0,0,501,500&w=501&h=500'
+          "
+          [buttonText]="'Create free account'"
+          [isTeachers]="'true'"
+        >
+        </app-card>
+      </div>
+    </div>
+    <app-footer></app-footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
