@@ -29,7 +29,9 @@ This will build the Angular app and start a development server. The app will be 
 
 1. Open a new terminal and navigate to the `QuizxAPI` folder.
 
-`cd /QuizXAPI/QuizxAPI/`
+```
+cd /QuizXAPI/QuizxAPI/
+```
 
 2. Open the `appsettings.json` file and update the connection string in the `ConnectionStrings` section with your MySQL server details.
 
@@ -39,18 +41,31 @@ This will build the Angular app and start a development server. The app will be 
 
 3. Run the following command to restore the NuGet packages:
 
-`dotnet restore`
+```zsh
+dotnet restore
+```
 
-4. Create the database by running the following command:
+4. Create migrations the database by running the following commands:
 
-`dotnet ef database update`
+```zsh
+dotnet ef migrations add v1
+```
+
+```zsh
+dotnet ef database update
+```
 
 This will apply any pending migrations and create the necessary database tables.
 
 5. Start the backend server by running:
 
-`dotnet build`
-`dotnet run`
+```zsh
+dotnet build
+```
+
+```zsh
+dotnet run
+```
 
 The backend server will be accessible at http://localhost:5169.
 
